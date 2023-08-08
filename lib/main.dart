@@ -10,7 +10,10 @@ import 'package:landing_page/abstracts/module/yes_module.dart';
 import 'package:landing_page/di/di_config.dart';
 import 'package:landing_page/generated/l10n.dart';
 import 'package:landing_page/hive/hive_init.dart';
+import 'package:landing_page/module_landing_page/landing_page_module.dart';
 import 'package:landing_page/module_localization/service/localization_service/localization_service.dart';
+import 'package:landing_page/module_splash/splash_module.dart';
+import 'package:landing_page/module_splash/splash_routes.dart';
 import 'package:landing_page/utils/logger/logger.dart';
 
 void main() async {
@@ -33,8 +36,14 @@ void main() async {
 @injectable
 class MyApp extends StatefulWidget {
   final LocalizationService _localizationService;
+  final SplashModule _splashModule;
+  final LandingPageModule _landingPageModule;
 
-  const MyApp(this._localizationService);
+  const MyApp(
+    this._localizationService,
+    this._splashModule,
+    this._landingPageModule,
+  );
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -72,6 +81,8 @@ class _MyAppState extends State<MyApp> {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
+      routes: fullRoutesList,
+      initialRoute: SplashRoutes.SPLASH_SCREEN,
     );
   }
 
