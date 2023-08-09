@@ -32,7 +32,7 @@ class _LandingPageScreenState extends State<LandingPageScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 70),
               // captain app widget
               AppWidgetDesktop(
                 title: S.current.captainWidgetTitle,

@@ -162,7 +162,7 @@ class AppWidgetPhone extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(
-          width: MediaQuery.sizeOf(context).width * 0.8,
+          width: MediaQuery.sizeOf(context).width * 0.95,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -197,8 +197,8 @@ class AppWidgetPhone extends StatelessWidget {
                             launchUrl(uri);
                           }
                         },
-                        child: SizedBox(
-                          height: 56,
+                        child: Container(
+                          constraints: BoxConstraints(maxHeight: 56),
                           child: Image.asset(ImageAsset.GOOGLE_DOWNLOAD_BUTTON),
                         ),
                       ),
@@ -230,8 +230,8 @@ class AppWidgetPhone extends StatelessWidget {
                             launchUrl(uri);
                           }
                         },
-                        child: SizedBox(
-                          height: 56,
+                        child: Container(
+                          constraints: BoxConstraints(maxHeight: 56),
                           child: Image.asset(ImageAsset.APPLE_DOWNLOAD_BUTTON),
                         ),
                       ),
