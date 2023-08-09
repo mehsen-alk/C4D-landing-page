@@ -50,11 +50,51 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `hi`
-  String get hi {
+  /// `Welcome To C4D Apps`
+  String get welcomeToC4DApps {
     return Intl.message(
-      'hi',
-      name: 'hi',
+      'Welcome To C4D Apps',
+      name: 'welcomeToC4DApps',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery without commission`
+  String get storeWidgetTitle {
+    return Intl.message(
+      'Delivery without commission',
+      name: 'storeWidgetTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Call 4 Delivery\nAnd make your customers satisfied and happy\nThrough the c4d delivery service, guarantee speed, safety and trust with your customers`
+  String get storeWidgetDescription {
+    return Intl.message(
+      'Call 4 Delivery\nAnd make your customers satisfied and happy\nThrough the c4d delivery service, guarantee speed, safety and trust with your customers',
+      name: 'storeWidgetDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Have a car? let's earn some money`
+  String get captainWidgetTitle {
+    return Intl.message(
+      'Have a car? let\'s earn some money',
+      name: 'captainWidgetTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Download the c4d app, receive orders, and make profits at any time`
+  String get captainWidgetDescription {
+    return Intl.message(
+      'Download the c4d app, receive orders, and make profits at any time',
+      name: 'captainWidgetDescription',
       desc: '',
       args: [],
     );

@@ -62,7 +62,7 @@ class ResponsiveLayout extends StatelessWidget {
     else if (ScreenType.isDesktop(context))
       return desktopBody ?? mobileBody;
     else if (ScreenType.isTablet(context))
-      return tabletBody ?? desktopBody ?? mobileBody;
+      return tabletBody ?? mobileBody;
     else
       return mobileBody;
   }

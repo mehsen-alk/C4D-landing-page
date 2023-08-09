@@ -14,7 +14,7 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import '../main.dart' as _i10;
 import '../module_landing_page/landing_page_module.dart' as _i8;
-import '../module_landing_page/screen/landing_page_screen.dart' as _i3;
+import '../module_landing_page/ui/screen/landing_page_screen.dart' as _i3;
 import '../module_localization/persistance/localization_preferences_helper/localization_preferences_helper.dart'
     as _i4;
 import '../module_localization/service/localization_service/localization_service.dart'

@@ -1,4 +1,8 @@
 {
     "@@locale": "en",
-    "hi": "hi"
+    "welcomeToC4DApps": "Welcome To C4D Apps",
+    "storeWidgetTitle": "Delivery without commission",
+    "storeWidgetDescription": "Call 4 Delivery\nAnd make your customers satisfied and happy\nThrough the c4d delivery service, guarantee speed, safety and trust with your customers",
+    "captainWidgetTitle": "Have a car? let's earn some money",
+    "captainWidgetDescription": "Download the c4d app, receive orders, and make profits at any time"
 }

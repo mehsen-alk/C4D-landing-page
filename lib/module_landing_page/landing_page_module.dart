@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 
 import 'package:landing_page/abstracts/module/yes_module.dart';
 import 'package:landing_page/module_landing_page/landing_page_routes.dart';
-import 'package:landing_page/module_landing_page/screen/landing_page_screen.dart';
+import 'package:landing_page/module_landing_page/ui/screen/landing_page_screen.dart';
 
 @injectable
 class LandingPageModule extends YesModule {

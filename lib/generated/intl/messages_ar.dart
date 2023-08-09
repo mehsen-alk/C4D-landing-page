@@ -21,6 +21,16 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) =>
-      <String, Function>{"hi": MessageLookupByLibrary.simpleMessage("هاي")};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "captainWidgetDescription": MessageLookupByLibrary.simpleMessage(
+            "حمل تطبيق C4D و استقبل الطلبات و حقق أرباح بأي وقت"),
+        "captainWidgetTitle":
+            MessageLookupByLibrary.simpleMessage("عندك سيارة؟ دورها و اربح"),
+        "storeWidgetDescription": MessageLookupByLibrary.simpleMessage(
+            " اتصل نصل\nو اجعل عملاءك راضيين و سعداء\nمن خلال خدمة توصيل C4D و اضمن السرعة و الامان و الثقة مع عملائك"),
+        "storeWidgetTitle":
+            MessageLookupByLibrary.simpleMessage("توصيل بدون عمولة"),
+        "welcomeToC4DApps":
+            MessageLookupByLibrary.simpleMessage("اهلا بك في تطبيقات C4D")
+      };
 }
