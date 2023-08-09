@@ -14,6 +14,7 @@ import 'package:landing_page/module_landing_page/landing_page_module.dart';
 import 'package:landing_page/module_localization/service/localization_service/localization_service.dart';
 import 'package:landing_page/module_splash/splash_module.dart';
 import 'package:landing_page/module_splash/splash_routes.dart';
+import 'package:landing_page/module_theme/service/theme_service/theme_service.dart';
 import 'package:landing_page/utils/logger/logger.dart';
 
 void main() async {
@@ -38,11 +39,13 @@ class MyApp extends StatefulWidget {
   final LocalizationService _localizationService;
   final SplashModule _splashModule;
   final LandingPageModule _landingPageModule;
+  final AppThemeDataService _themeDataService;
+
 
   const MyApp(
     this._localizationService,
     this._splashModule,
-    this._landingPageModule,
+    this._landingPageModule, this._themeDataService,
   );
 
   @override
@@ -51,13 +54,19 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late String lang;
+  late ThemeData activeTheme;
 
   @override
   void initState() {
     super.initState();
     lang = widget._localizationService.getLanguage();
+    activeTheme = widget._themeDataService.getActiveTheme();
     widget._localizationService.localizationStream.listen((event) {
       lang = event;
+      setState(() {});
+    });
+    widget._themeDataService.darkModeStream.listen((event) {
+      activeTheme = event;
       setState(() {});
     });
   }
@@ -66,10 +75,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'C4D',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: activeTheme,
       home: const Placeholder(),
       locale: Locale.fromSubtags(
         languageCode: lang,

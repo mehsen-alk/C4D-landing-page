@@ -6,7 +6,7 @@ class ScreenType {
     var screenSize =
         MediaQuery.of(GlobalVariable.navState.currentContext!).size;
 
-    if (screenSize.width >= 1200) {
+    if (screenSize.width >= 800) {
       return 'Desktop';
     }
     if (screenSize.width >= 600) {
@@ -30,7 +30,7 @@ class ScreenType {
 
   static bool isDesktop(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    if (screenSize.width >= 1200) {
+    if (screenSize.width >= 800) {
       return true;
     } else {
       return false;

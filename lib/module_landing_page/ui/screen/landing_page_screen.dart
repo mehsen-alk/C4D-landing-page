@@ -25,6 +25,7 @@ class _LandingPageScreenState extends State<LandingPageScreen> {
           desktopBody: Column(
             children: [
               Row(),
+              SizedBox(height: 30),
               Text(
                 S.current.welcomeToC4DApps,
                 style: textTheme.titleLarge?.copyWith(
@@ -57,11 +58,13 @@ class _LandingPageScreenState extends State<LandingPageScreen> {
                 googleQrCodePath: ImageAsset.QR_STORE_GOOGLE,
                 imagePath: ImageAsset.STORE_PHONE,
               ),
+              SizedBox(height: 100),
             ],
           ),
           mobileBody: Column(
             children: [
               Row(),
+              SizedBox(height: 30),
               Text(
                 S.current.welcomeToC4DApps,
                 style: textTheme.titleLarge?.copyWith(
@@ -94,6 +97,7 @@ class _LandingPageScreenState extends State<LandingPageScreen> {
                 googleQrCodePath: ImageAsset.QR_STORE_GOOGLE,
                 imagePath: ImageAsset.STORE_PHONE,
               ),
+              SizedBox(height: 100),
             ],
           ),
         ),
