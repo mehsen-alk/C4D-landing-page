@@ -54,70 +54,16 @@ class AppWidgetDesktop extends StatelessWidget {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      InkWell(
-                        splashFactory: NoSplash.splashFactory,
-                        onTap: () async {
-                          var uri = Uri.tryParse(googleButtonUrl);
-                          if (uri != null && await canLaunchUrl(uri)) {
-                            launchUrl(uri);
-                          }
-                        },
-                        child: SizedBox(
-                          height: 56,
-                          child: Image.asset(ImageAsset.GOOGLE_DOWNLOAD_BUTTON),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      InkWell(
-                        splashFactory: NoSplash.splashFactory,
-                        onTap: () async {
-                          var uri = Uri.tryParse(googleButtonUrl);
-                          if (uri != null && await canLaunchUrl(uri)) {
-                            launchUrl(uri);
-                          }
-                        },
-                        child: SizedBox(
-                          height: 100,
-                          child: Image.asset(googleQrCodePath),
-                        ),
-                      ),
-                    ],
+                  StoresLinksWidget(
+                    buttonImagePath: ImageAsset.GOOGLE_DOWNLOAD_BUTTON,
+                    buttonUrl: googleButtonUrl,
+                    qrCodeImagePath: googleQrCodePath,
                   ),
                   SizedBox(width: 20),
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      InkWell(
-                        splashFactory: NoSplash.splashFactory,
-                        onTap: () async {
-                          var uri = Uri.tryParse(appleButtonUrl);
-                          if (uri != null && await canLaunchUrl(uri)) {
-                            launchUrl(uri);
-                          }
-                        },
-                        child: SizedBox(
-                          height: 56,
-                          child: Image.asset(ImageAsset.APPLE_DOWNLOAD_BUTTON),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      InkWell(
-                        splashFactory: NoSplash.splashFactory,
-                        onTap: () async {
-                          var uri = Uri.tryParse(appleButtonUrl);
-                          if (uri != null && await canLaunchUrl(uri)) {
-                            launchUrl(uri);
-                          }
-                        },
-                        child: SizedBox(
-                          height: 100,
-                          child: Image.asset(appleQrCodePath),
-                        ),
-                      ),
-                    ],
+                  StoresLinksWidget(
+                    buttonImagePath: ImageAsset.APPLE_DOWNLOAD_BUTTON,
+                    buttonUrl: appleButtonUrl,
+                    qrCodeImagePath: appleQrCodePath,
                   ),
                 ],
               ),
@@ -186,70 +132,16 @@ class AppWidgetPhone extends StatelessWidget {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      InkWell(
-                        splashFactory: NoSplash.splashFactory,
-                        onTap: () async {
-                          var uri = Uri.tryParse(googleButtonUrl);
-                          if (uri != null && await canLaunchUrl(uri)) {
-                            launchUrl(uri);
-                          }
-                        },
-                        child: Container(
-                          constraints: BoxConstraints(maxHeight: 56),
-                          child: Image.asset(ImageAsset.GOOGLE_DOWNLOAD_BUTTON),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      InkWell(
-                        splashFactory: NoSplash.splashFactory,
-                        onTap: () async {
-                          var uri = Uri.tryParse(googleButtonUrl);
-                          if (uri != null && await canLaunchUrl(uri)) {
-                            launchUrl(uri);
-                          }
-                        },
-                        child: SizedBox(
-                          height: 100,
-                          child: Image.asset(googleQrCodePath),
-                        ),
-                      ),
-                    ],
+                  StoresLinksWidget(
+                    buttonImagePath: ImageAsset.GOOGLE_DOWNLOAD_BUTTON,
+                    buttonUrl: googleButtonUrl,
+                    qrCodeImagePath: googleQrCodePath,
                   ),
                   SizedBox(width: 20),
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      InkWell(
-                        splashFactory: NoSplash.splashFactory,
-                        onTap: () async {
-                          var uri = Uri.tryParse(appleButtonUrl);
-                          if (uri != null && await canLaunchUrl(uri)) {
-                            launchUrl(uri);
-                          }
-                        },
-                        child: Container(
-                          constraints: BoxConstraints(maxHeight: 56),
-                          child: Image.asset(ImageAsset.APPLE_DOWNLOAD_BUTTON),
-                        ),
-                      ),
-                      SizedBox(height: 10),
-                      InkWell(
-                        splashFactory: NoSplash.splashFactory,
-                        onTap: () async {
-                          var uri = Uri.tryParse(appleButtonUrl);
-                          if (uri != null && await canLaunchUrl(uri)) {
-                            launchUrl(uri);
-                          }
-                        },
-                        child: SizedBox(
-                          height: 100,
-                          child: Image.asset(appleQrCodePath),
-                        ),
-                      ),
-                    ],
+                  StoresLinksWidget(
+                    buttonImagePath: ImageAsset.APPLE_DOWNLOAD_BUTTON,
+                    buttonUrl: appleButtonUrl,
+                    qrCodeImagePath: appleQrCodePath,
                   ),
                 ],
               ),
@@ -261,6 +153,55 @@ class AppWidgetPhone extends StatelessWidget {
         //   height: MediaQuery.sizeOf(context).height * 0.75,
         //   child: Image.asset(imagePath),
         // ),
+      ],
+    );
+  }
+}
+
+class StoresLinksWidget extends StatelessWidget {
+  const StoresLinksWidget({
+    super.key,
+    required this.buttonUrl,
+    required this.qrCodeImagePath,
+    required this.buttonImagePath,
+  });
+
+  final String buttonUrl;
+  final String qrCodeImagePath;
+  final String buttonImagePath;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        InkWell(
+          splashFactory: NoSplash.splashFactory,
+          onTap: () async {
+            var uri = Uri.tryParse(buttonUrl);
+            if (uri != null && await canLaunchUrl(uri)) {
+              launchUrl(uri);
+            }
+          },
+          child: SizedBox(
+            height: 100,
+            child: Image.asset(qrCodeImagePath),
+          ),
+        ),
+        SizedBox(height: 10),
+        InkWell(
+          splashFactory: NoSplash.splashFactory,
+          onTap: () async {
+            var uri = Uri.tryParse(buttonUrl);
+            if (uri != null && await canLaunchUrl(uri)) {
+              launchUrl(uri);
+            }
+          },
+          child: Container(
+            constraints: BoxConstraints(maxHeight: 56),
+            child: Image.asset(buttonImagePath),
+          ),
+        ),
       ],
     );
   }

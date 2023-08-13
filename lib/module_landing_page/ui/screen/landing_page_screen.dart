@@ -34,6 +34,19 @@ class _LandingPageScreenState extends State<LandingPageScreen> {
                 ),
               ),
               SizedBox(height: 70),
+              // store app widget
+              AppWidgetDesktop(
+                title: S.current.storeWidgetTitle,
+                description: S.current.storeWidgetDescription,
+                googleButtonUrl:
+                    'https://play.google.com/store/apps/details?id=de.yessoft.c4d_store',
+                appleButtonUrl:
+                    'https://apps.apple.com/us/app/c4d/id1564653150?platform=iphone',
+                appleQrCodePath: ImageAsset.QR_STORE_APPEl,
+                googleQrCodePath: ImageAsset.QR_STORE_GOOGLE,
+                imagePath: ImageAsset.STORE_PHONE,
+              ),
+              SizedBox(height: 100),
               // captain app widget
               AppWidgetDesktop(
                 title: S.current.captainWidgetTitle,
@@ -47,17 +60,7 @@ class _LandingPageScreenState extends State<LandingPageScreen> {
                 imagePath: ImageAsset.CAPTAIN_PHONE,
               ),
               SizedBox(height: 100),
-              AppWidgetDesktop(
-                title: S.current.storeWidgetTitle,
-                description: S.current.storeWidgetDescription,
-                googleButtonUrl:
-                    'https://play.google.com/store/apps/details?id=de.yessoft.c4d_store',
-                appleButtonUrl:
-                    'https://apps.apple.com/us/app/c4d/id1564653150?platform=iphone',
-                appleQrCodePath: ImageAsset.QR_STORE_APPEl,
-                googleQrCodePath: ImageAsset.QR_STORE_GOOGLE,
-                imagePath: ImageAsset.STORE_PHONE,
-              ),
+
               SizedBox(height: 100),
             ],
           ),
@@ -73,6 +76,19 @@ class _LandingPageScreenState extends State<LandingPageScreen> {
                 ),
               ),
               SizedBox(height: 30),
+              // store app widget
+              AppWidgetPhone(
+                title: S.current.storeWidgetTitle,
+                description: S.current.storeWidgetDescription,
+                googleButtonUrl:
+                    'https://play.google.com/store/apps/details?id=de.yessoft.c4d_store',
+                appleButtonUrl:
+                    'https://apps.apple.com/us/app/c4d/id1564653150?platform=iphone',
+                appleQrCodePath: ImageAsset.QR_STORE_APPEl,
+                googleQrCodePath: ImageAsset.QR_STORE_GOOGLE,
+                imagePath: ImageAsset.STORE_PHONE,
+              ),
+              SizedBox(height: 100),
               // captain app widget
               AppWidgetPhone(
                 title: S.current.captainWidgetTitle,
@@ -84,18 +100,6 @@ class _LandingPageScreenState extends State<LandingPageScreen> {
                 appleQrCodePath: ImageAsset.QR_CAPTAIN_APPEL,
                 googleQrCodePath: ImageAsset.QR_CAPTAIN_GOOGLE,
                 imagePath: ImageAsset.CAPTAIN_PHONE,
-              ),
-              SizedBox(height: 100),
-              AppWidgetPhone(
-                title: S.current.storeWidgetTitle,
-                description: S.current.storeWidgetDescription,
-                googleButtonUrl:
-                    'https://play.google.com/store/apps/details?id=de.yessoft.c4d_store',
-                appleButtonUrl:
-                    'https://apps.apple.com/us/app/c4d/id1564653150?platform=iphone',
-                appleQrCodePath: ImageAsset.QR_STORE_APPEl,
-                googleQrCodePath: ImageAsset.QR_STORE_GOOGLE,
-                imagePath: ImageAsset.STORE_PHONE,
               ),
               SizedBox(height: 100),
             ],
