@@ -25,6 +25,9 @@ class _LandingPageScreenState extends State<LandingPageScreen> {
     return Stack(
       fit: StackFit.expand,
       children: [
+        Positioned.fill(
+          child: Container(color: Colors.white),
+        ),
         Image.asset(
           backgroundImagePath,
           fit: BoxFit.fill,
