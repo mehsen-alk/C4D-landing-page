@@ -13,6 +13,8 @@ class ImageAsset {
   static const GOOGLE_DOWNLOAD_BUTTON =
       '${ROOT}/google-play-download-button.png';
   static const APPLE_DOWNLOAD_BUTTON = '${ROOT}/app-store-download-button.png';
+  static const PC_BACKGROUND = '${ROOT}/pc-background.jpg';
+  static const PHONE_BACKGROUND = '${ROOT}/phone-background.jpg';
 }
 
 class SvgAsset {
